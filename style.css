@@ -1,0 +1,224 @@
+:root {
+    --bg-dark: #121212;
+    --bg-light-dark: #1e1e1e;
+    --text-white: #ffffff;
+    --text-muted: #aaaaaa;
+    --accent-green: #4CAF50;
+    --accent-red: #F44336;
+    --accent-orange: #FF9800;
+    --accent-cyan: #00BCD4;
+    --primary-selection: #00BCD420;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Roboto', sans-serif; /* Using a clean, modern font */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-size: 14px;
+}
+
+/* --- Panel Layout --- */
+.panel-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: var(--bg-light-dark);
+    padding: 20px 0;
+    border-right: 1px solid #333;
+}
+
+.logo {
+    color: var(--accent-cyan);
+    font-size: 1.2em;
+    padding: 0 20px 20px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 10px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-item i {
+    margin-right: 10px;
+    width: 15px;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: var(--primary-selection);
+    color: var(--text-white);
+    border-left: 3px solid var(--accent-cyan);
+    padding-left: 17px;
+}
+
+.nav-item.active {
+    color: var(--accent-cyan);
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* --- Stats Header --- */
+.stats-header {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.stat-box {
+    background-color: #222222;
+    padding: 10px 15px;
+    border-radius: 6px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-box strong {
+    color: var(--text-muted);
+    font-size: 0.75em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.stat-box span {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.stat-box.clients .green {
+    color: var(--accent-green);
+}
+.stat-box.clients .red {
+    color: var(--accent-red);
+}
+
+/* --- Main Actions --- */
+.main-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    align-items: center;
+}
+
+.action-button {
+    background: none;
+    border: 1px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.action-button.green-bg {
+    background-color: var(--accent-green);
+    border-color: var(--accent-green);
+    color: var(--bg-dark);
+    font-weight: bold;
+}
+
+.search-input {
+    background-color: #333;
+    border: 1px solid #444;
+    color: var(--text-white);
+    padding: 8px 10px;
+    border-radius: 4px;
+    flex-grow: 1; /* Match the photo layout */
+}
+
+/* --- Inbounds List/Table --- */
+.inbounds-list {
+    background-color: var(--bg-light-dark);
+    border-radius: 6px;
+    padding: 15px;
+}
+
+.group-title {
+    color: var(--accent-cyan);
+    padding: 10px 0;
+    margin-top: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 150px 1fr 100px 150px 100px 100px;
+    color: var(--text-muted);
+    padding: 10px 0;
+    font-weight: normal;
+    font-size: 0.75em;
+    text-transform: uppercase;
+}
+
+.client-row {
+    display: grid;
+    grid-template-columns: 150px 1fr 100px 150px 100px 100px;
+    padding: 10px 0;
+    border-top: 1px solid #2a2a2a;
+    align-items: center;
+}
+
+.col {
+    padding: 0 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.client-name {
+    color: var(--accent-cyan);
+    font-weight: bold;
+}
+
+/* Protocol Badges */
+.badge {
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.7em;
+    font-weight: bold;
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+
+.badge.tcp { background-color: #00BCD4; color: #111; }
+.badge.tls { background-color: #4CAF50; color: #111; }
+.badge.trojan { background-color: #FFC107; color: #111; }
+
+/* Progress Bars */
+.progress-container {
+    height: 8px;
+    background-color: #333;
+    border-radius: 4px;
+    width: 90%;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s;
+}
+
+.progress-bar.green { background-color: var(--accent-green); }
+.progress-bar.red { background-color: var(--accent-red); }
+.progress-bar.orange { background-color: var(--accent-orange); }
