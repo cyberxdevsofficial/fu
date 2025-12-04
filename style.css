@@ -75,7 +75,18 @@ body {
     overflow-y: auto;
 }
 
-/* --- Stats Header --- */
+/* --- Page Content Styles --- */
+.page-content.hidden {
+    display: none;
+}
+
+.page-title {
+    font-size: 1.8em;
+    color: var(--text-white);
+    margin-bottom: 25px;
+}
+
+/* --- Stats Header (Used on Inbounds page) --- */
 .stats-header {
     display: flex;
     gap: 15px;
@@ -84,6 +95,7 @@ body {
     border-bottom: 1px solid #2a2a2a;
 }
 
+/* --- Stat Boxes (Used on Overview and Inbounds) --- */
 .stat-box {
     background-color: #222222;
     padding: 10px 15px;
@@ -112,7 +124,21 @@ body {
     color: var(--accent-red);
 }
 
-/* --- Main Actions --- */
+.stat-box .status-ok {
+    color: var(--accent-green);
+    font-weight: bold;
+}
+
+/* --- Overview Page Grid --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+
+/* --- Main Actions (Used on Inbounds page) --- */
 .main-actions {
     display: flex;
     gap: 10px;
@@ -143,7 +169,7 @@ body {
     color: var(--text-white);
     padding: 8px 10px;
     border-radius: 4px;
-    flex-grow: 1; /* Match the photo layout */
+    flex-grow: 1;
 }
 
 /* --- Inbounds List/Table --- */
@@ -162,7 +188,8 @@ body {
 
 .table-header {
     display: grid;
-    grid-template-columns: 150px 1fr 100px 150px 100px 100px;
+    /* Define 6 columns for the table */
+    grid-template-columns: 150px 1fr 100px 150px 100px 100px; 
     color: var(--text-muted);
     padding: 10px 0;
     font-weight: normal;
@@ -222,3 +249,49 @@ body {
 .progress-bar.green { background-color: var(--accent-green); }
 .progress-bar.red { background-color: var(--accent-red); }
 .progress-bar.orange { background-color: var(--accent-orange); }
+
+/* --- Panel Settings and Configs --- */
+.section-heading {
+    color: var(--accent-cyan);
+    font-size: 1.1em;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+    margin: 25px 0 15px;
+}
+
+.settings-form p, .settings-form label, .settings-form select {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.settings-form select {
+    background-color: #333;
+    border: 1px solid #444;
+    color: var(--text-white);
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.code-block {
+    background-color: #000;
+    color: #00FF00; /* Green text for config files */
+    padding: 15px;
+    border-radius: 4px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+.warning-note {
+    background-color: #331111;
+    color: var(--accent-red);
+    padding: 10px;
+    border-left: 3px solid var(--accent-red);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+.warning-note i {
+    margin-right: 10px;
+}
