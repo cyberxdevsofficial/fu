@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPN Admin Panel Mock-up</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="panel-container">
+        <aside class="sidebar">
+            <h3 class="logo"><i class="fas fa-server"></i> Theme</h3>
+            <nav>
+                <a href="#" class="nav-item"><i class="fas fa-gauge-high"></i> Overview</a>
+                <a href="#" class="nav-item active"><i class="fas fa-right-to-bracket"></i> Inbounds</a>
+                <a href="#" class="nav-item"><i class="fas fa-gears"></i> Panel Settings</a>
+                <a href="#" class="nav-item"><i class="fas fa-code-branch"></i> Xray Configs</a>
+                <a href="#" class="nav-item logout"><i class="fas fa-right-from-bracket"></i> Log Out</a>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <header class="stats-header">
+                <div class="stat-box">
+                    <strong>Total Sent/Received</strong>
+                    <span>4.97 GB / 85.30 GB</span>
+                </div>
+                <div class="stat-box">
+                    <strong>Total Usage</strong>
+                    <span>90.27 GB</span>
+                </div>
+                <div class="stat-box">
+                    <strong>All Time Total Usage</strong>
+                    <span>90.27 GB</span>
+                </div>
+                <div class="stat-box">
+                    <strong>Total Inbounds</strong>
+                    <span>3</span>
+                </div>
+                <div class="stat-box clients">
+                    <strong>Clients</strong>
+                    <span><i class="fas fa-users green"></i> 16 <i class="fas fa-user-check red"></i> 1</span>
+                </div>
+            </header>
+
+            <section class="main-actions">
+                <button class="action-button green-bg"><i class="fas fa-plus"></i> Add Inbound</button>
+                <button class="action-button"><i class="fas fa-gear"></i> General Actions</button>
+                <input type="text" placeholder="Search" class="search-input">
+            </section>
+
+            <section class="inbounds-list">
+                <div class="inbound-group">
+                    <h4 class="group-title">Port 443</h4>
+                    <div class="table-header">
+                        <span class="col protocol">Protocol</span>
+                        <span class="col traffic-bar">Traffic</span>
+                        <span class="col client">Client</span>
+                        <span class="col traffic">Traffic</span>
+                        <span class="col all-time">All-Time Traffic</span>
+                        <span class="col duration">Duration</span>
+                    </div>
+
+                    <div class="client-row">
+                        <span class="col protocol">
+                            <span class="badge tcp">TCP</span>
+                            <span class="badge tls">TLS</span>
+                        </span>
+                        <span class="col client-name">4x9e6a6f</span>
+                        <span class="col traffic-usage">20.58 GB</span>
+                        <span class="col traffic-bar">
+                            <div class="progress-container"><div class="progress-bar green" style="width: 80%;"></div></div>
+                        </span>
+                        <span class="col all-time">25.58 GB</span>
+                        <span class="col duration">18d 21h</span>
+                    </div>
+
+                    <div class="client-row">
+                        <span class="col protocol">
+                            <span class="badge tcp">TCP</span>
+                            <span class="badge tls">TLS</span>
+                        </span>
+                        <span class="col client-name">mbiranga</span>
+                        <span class="col traffic-usage">2.44 GB</span>
+                        <span class="col traffic-bar">
+                            <div class="progress-container"><div class="progress-bar red" style="width: 15%;"></div></div>
+                        </span>
+                        <span class="col all-time">2.44 GB</span>
+                        <span class="col duration">16d 21h</span>
+                    </div>
+
+                    </div>
+
+                <div class="inbound-group">
+                    <h4 class="group-title">Port 8081</h4>
+                    <div class="table-header">
+                        <span class="col protocol">Protocol</span>
+                        <span class="col traffic-bar">Traffic</span>
+                        <span class="col client">Client</span>
+                        <span class="col traffic">Traffic</span>
+                        <span class="col all-time">All-Time Traffic</span>
+                        <span class="col duration">Duration</span>
+                    </div>
+                    
+                    <div class="client-row">
+                        <span class="col protocol">
+                            <span class="badge tcp">TCP</span>
+                            <span class="badge tls">TLS</span>
+                        </span>
+                        <span class="col client-name">sudem</span>
+                        <span class="col traffic-usage">271.45 MB</span>
+                        <span class="col traffic-bar">
+                            <div class="progress-container"><div class="progress-bar orange" style="width: 50%;"></div></div>
+                        </span>
+                        <span class="col all-time">271.45 MB</span>
+                        <span class="col duration">1d 23h</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
